@@ -10,7 +10,7 @@ const app=express();
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
 
-mongoose.connect("mongodb+srv://utsav_23:1234abcd@cluster0.pic0u.mongodb.net/ShopifyDatabase?retryWrites=true&w=majority",{
+mongoose.connect(process.env.MONGO_URL,{
     useNewUrlParser:true,
     useUnifiedTopology:true,
     useCreateIndex:true
