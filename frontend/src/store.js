@@ -5,7 +5,11 @@ import { productDetailsReducer, productListReducer } from "./reducers/productRed
 import { userSigninReducer } from "./reducers/userReducer";
 
  //to create store we require first initstate and reducer
- const initialState={cart:{
+ const initialState={
+    userSignin:{
+      userInfo:localStorage.getItem('userInfo')?JSON.parse(localStorage.getItem('userInfo')):null
+    } ,
+    cart:{
      cartItems:localStorage.getItem('cartItems')?JSON.parse(localStorage.getItem('cartItems')):[],
  }};
  const reducer= combineReducers({
